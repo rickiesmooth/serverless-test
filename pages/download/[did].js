@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 const Dog = ({ dog, breed }) => (
   <React.Fragment>
     <Head>
