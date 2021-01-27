@@ -12,8 +12,10 @@ const Dog = ({ dog }) => {
   );
 };
 
-Dog.getInitialProps = async (ctx) => {
-  const res = await fetch("https://dog.ceo/api/breed/hound/images/random");
+Dog.getInitialProps = async ({ query }) => {
+  const res = await fetch(
+    `https://dog.ceo/api/breed/${query.did}/images/random`
+  );
   const json = await res.json();
   return { dog: json.message };
 };
